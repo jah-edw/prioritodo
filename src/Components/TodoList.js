@@ -10,9 +10,6 @@ function TodoList(props) {
     <div className="todoListContainer">
       <h1 className="todoListTitle">upcomings</h1>
       {sortedList.map((item, index) => {
-        {
-          console.log(item);
-        }
         return <Todo key={item.todo} item={item} setTodoList={setTodoList} />;
       })}
     </div>
