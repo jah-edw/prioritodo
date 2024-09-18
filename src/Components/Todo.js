@@ -21,11 +21,9 @@ function Todo({ item }) {
 
   function handleSubmit(event) {
     let inputText = editInput.current.value;
-    // if (event.key === 'Enter') {
     setIsEditing(false);
     if (inputText !== "") setCurrentTodo({ ...currentTodo, todo: inputText });
     console.log("submit");
-    // }
   }
 
   return (
@@ -36,9 +34,9 @@ function Todo({ item }) {
         onDoubleClick={() => makeEditable(item)}
         style={{
           background:
-            item.priority === "high"
+            item.priority === "0"
               ? "rgb(254,121,104,1)"
-              : item.priority === "medium"
+              : item.priority === "1"
               ? "rgb(251, 192, 147,1)"
               : "rgb(255, 246, 143,1)",
         }}
@@ -54,9 +52,9 @@ function Todo({ item }) {
               left: "4vw",
               bottom: "1vw",
               background:
-                item.priority === "high"
+                item.priority === "0"
                   ? "rgb(254,121,104,1)"
-                  : item.priority === "medium"
+                  : item.priority === "1"
                   ? "rgb(251, 192, 147,1)"
                   : "rgb(255, 246, 143,1)",
               cursor: "auto",
